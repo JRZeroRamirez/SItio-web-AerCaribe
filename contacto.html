@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Aer Caribe | Cotización y Consultas</title>
+    <meta name="description" content="Contáctanos para cotizaciones de carga aérea, consultas sobre nuestros servicios o solicitar información personalizada.">
+    
+    <!-- Mismo head que index.html -->
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+</head>
+<body>
+    <!-- Mismo header que index.html -->
+    <header class="fixed-top shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                  <!-- Logo de Aer Caribe -->
+                    <a class="navbar-brand" href="index.html">
+                 <img src="assets/img/Logo.webp" 
+                        alt="Aer Caribe - Logotipo" 
+                        title="Logo aercaribe0"
+                        height="40"
+                        class="d-inline-block align-top">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                            <a class="btn btn-warning btn-cta fw-bold" href="contacto.html">Cotizar Envío</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero de contacto -->
+    <section class="page-hero contacto-hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center text-white">
+                    <h1 class="display-5 fw-bold mb-4">Contáctanos</h1>
+                    <p class="lead">Estamos aquí para ayudarte con tus necesidades logísticas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto y formulario -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">¿En qué podemos ayudarte?</h2>
+                    <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Formulario de contacto -->
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="card-title mb-4">Solicitud de cotización o consulta</h3>
+                            
+                            <!-- Mensajes de estado del formulario -->
+                            <div id="formMessage" class="alert d-none" role="alert"></div>
+                            
+                            <form id="contactForm" novalidate>
+                                <div class="row">
+                                    <!-- Nombre -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">Nombre *</label>
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa tu nombre.
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Apellido -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Apellido *</label>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa tu apellido.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Correo electrónico -->
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo electrónico *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa un correo electrónico válido.
+                                    </div>
+                                </div>
+                                
+                                <!-- Teléfono -->
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Teléfono *</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa tu número de teléfono.
+                                    </div>
+                                </div>
+                                
+                                <!-- Empresa -->
+                                <div class="mb-3">
+                                    <label for="company" class="form-label">Empresa (opcional)</label>
+                                    <input type="text" class="form-control" id="company" name="company">
+                                </div>
+                                
+                                <!-- Tipo de servicio -->
+                                <div class="mb-3">
+                                    <label for="serviceType" class="form-label">Tipo de servicio *</label>
+                                    <select class="form-select" id="serviceType" name="serviceType" required>
+                                        <option value="" selected disabled>Selecciona un servicio</option>
+                                        <option value="general">Carga General</option>
+                                        <option value="refrigerada">Carga Refrigerada</option>
+                                        <option value="valor">Carga de Valor</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor selecciona un tipo de servicio.
+                                    </div>
+                                </div>
+                                
+                                <!-- Origen y destino -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="origin" class="form-label">Origen de la carga *</label>
+                                        <input type="text" class="form-control" id="origin" name="origin" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa el origen de la carga.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-3">
+                                        <label for="destination" class="form-label">Destino de la carga *</label>
+                                        <input type="text" class="form-control" id="destination" name="destination" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa el destino de la carga.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Peso y dimensiones -->
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="weight" class="form-label">Peso aproximado (kg)</label>
+                                        <input type="number" class="form-control" id="weight" name="weight" min="0">
+                                    </div>
+                                    
+                                    <div class="col-md-8 mb-3">
+                                        <label for="description" class="form-label">Descripción de la carga *</label>
+                                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Por favor describe la carga a transportar.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mensaje adicional -->
+                                <div class="mb-4">
+                                    <label for="message" class="form-label">Mensaje adicional (opcional)</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Información adicional que consideres importante..."></textarea>
+                                </div>
+                                
+                                <!-- Checkbox de términos -->
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                                        <label class="form-check-label" for="terms">
+                                            Acepto la <a href="#" class="text-primary">Política de Privacidad</a> y los <a href="#" class="text-primary">Términos del Servicio</a> *
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Debes aceptar los términos y condiciones para continuar.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Botón de envío -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg py-3" id="submitBtn">
+                                        <span id="submitText">Enviar solicitud</span>
+                                        <span id="submitSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Información de contacto -->
+                <div class="col-lg-4">
+                    <div class="contact-info mb-5">
+                        <h3 class="mb-4">Información de contacto</h3>
+                        
+                        <div class="contact-item d-flex mb-4">
+                            <div class="contact-icon me-3">
+                                <i class="bi bi-geo-alt-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="h6 mb-1">Dirección</h5>
+                                <p class="mb-0">Av. El Dorado # 103 - 08 / Entrada 1 - Interior 187</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex mb-4">
+                            <div class="contact-icon me-3">
+                                <i class="bi bi-telephone-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="h6 mb-1">Teléfono</h5>
+                                <p class="mb-0">(+57) 323 210 3932</p>
+                                <p class="small text-muted">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex mb-4">
+                            <div class="contact-icon me-3">
+                                <i class="bi bi-envelope-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="h6 mb-1">Correo electrónico</h5>
+                                <p class="mb-0">info@aercaribe.com</p>
+                                <p class="mb-0">ventas@aercaribe.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex">
+                            <div class="contact-icon me-3">
+                                <i class="bi bi-clock-fill text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="h6 mb-1">Horario de atención</h5>
+                                <p class="mb-0">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                                <p class="mb-0">Sábados: 9:00 AM - 1:00 PM</p>
+                                <p class="small text-muted">Soporte de emergencia 24/7 para clientes</p>
+                            </div>
+                        </div>
+                    </div>                    
+                 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de ubicación -->
+    <section class="map-section">
+        <div class="container-fluid p-0">
+            <div class="map-placeholder bg-light d-flex align-items-center justify-content-center">
+                <div class="text-center p-5">
+                    <i class="bi bi-geo-alt-fill display-1 text-primary mb-4"></i>
+                    <h3>Ubicación de nuestras oficinas principales</h3>
+                    <p class="mb-0">Av. El Dorado # 103 - 08 / Entrada 1 - Interior 187</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Información de la empresa -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand mb-3">
+                     <a class="navbar-brand" href="index.html">
+                 <img src="assets/img/Logo.webp" 
+                        alt="Aer Caribe - Logotipo" 
+                        title="Logo aercaribe0"
+                        height="40"
+                        class="d-inline-block align-top">
+                </a>
+                    </div>
+                    <p class="text-white-50">Especialistas en soluciones logísticas de carga aérea para el Caribe y América Latina desde 2008.</p>
+                    
+                    <!-- Redes sociales -->
+                    <div class="social-links mt-4">
+                        <a href="#" class="social-link me-3" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link me-3" aria-label="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link me-3" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Enlaces rápidos -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="servicios.html" class="footer-link">Servicios</a></li>
+                        <li class="mb-2"><a href="contacto.html" class="footer-link">Contacto</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Términos y Condiciones</a></li>
+                        <li><a href="#" class="footer-link">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Servicios -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Servicios</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="footer-link">Carga Aérea</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Carga Refrigerada</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Carga de Valor</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Logística Integral</a></li>
+                        <li><a href="#" class="footer-link">Almacenamiento</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contacto -->
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-4">Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex">
+                            <i class="bi bi-geo-alt-fill text-warning me-3"></i>
+                            <span class="text-white-50" alt="Direcccion de sede pricipal">Av. El Dorado # 103 - 08 / Entrada 1 - Interior 187</span>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <i class="bi bi-telephone-fill text-warning me-3"></i>
+                            <span class="text-white-50" alt="Telefono nacional">(+57) 323 210 3932 </span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="bi bi-envelope-fill text-warning me-3"></i>
+                            <span class="text-white-50"><a  href="mailto:customerservicebog@aercaribecargo" title="Enlace a correo">customerservicebog@aercaribecargo</a></span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Boletín informativo -->
+                    <div class="newsletter mt-4">
+                        <h6 class="text-white mb-3">Suscríbete a nuestro boletín</h6>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico" aria-label="Correo electrónico">
+                            <button class="btn btn-warning" type="button">Suscribir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-5 bg-white-50">
+            
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-white-50 mb-0">© 2026 Aer Caribe. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-white-50 mb-0">Desarrollado por JR con <i class="bi bi-heart-fill text-danger"></i> para el Caribe</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <button id="backToTop" class="btn btn-primary back-to-top" aria-label="Volver arriba">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JS Personalizado -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
